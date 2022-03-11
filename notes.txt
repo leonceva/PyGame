@@ -1,0 +1,2 @@
+Resources available from:
+    https://inventwithpython.com/pygame/downloads/
