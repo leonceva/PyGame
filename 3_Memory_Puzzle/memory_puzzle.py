@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import random, pygame, sys
 from pygame.locals import *
 
@@ -13,15 +15,15 @@ BOARD_WIDTH = 8
 BOARD_HEIGHT = 8
 GAP_SIZE = 10 # Size of gap between boxes
 
-BOX_WIDTH = int((WINDOW_WDITH - (GAP_SIZE*(BOARD_WIDTH+1))) / BOARD_WIDTH) # Size of box height/width
-BOX_HEIGHT = int((WINDOW_HEIGHT - (GAP_SIZE*(BOARD_HEIGHT+1))) / BOARD_HEIGHT)
+BOX_WIDTH = int((WINDOW_WDITH - (GAP_SIZE*BOARD_WIDTH)) / BOARD_WIDTH) # Size of box height/width
+BOX_HEIGHT = int((WINDOW_HEIGHT - (GAP_SIZE*BOARD_HEIGHT)) / BOARD_HEIGHT)
 
 assert (BOARD_WIDTH*BOARD_HEIGHT) % 2 == 0, 'Board needs to have a total number of even boxes to make pairs'
 
-X_MARGIN = int((WINDOW_WDITH - (BOARD_WIDTH * (BOX_WIDTH + GAP_SIZE))) / 2)
-Y_MARGIN = int((WINDOW_HEIGHT - (BOARD_HEIGHT * (BOX_HEIGHT + GAP_SIZE))) / 2)
+X_MARGIN = int((WINDOW_WDITH - (BOARD_WIDTH * (BOX_WIDTH + GAP_SIZE))+GAP_SIZE) / 2)
+Y_MARGIN = int((WINDOW_HEIGHT - (BOARD_HEIGHT * (BOX_HEIGHT + GAP_SIZE))+GAP_SIZE) / 2)
 
-GRAY        = (100, 100, 100)		
+GRAY        = (100, 100, 100)	
 NAVY_BLUE   = ( 60,  60, 100)		
 WHITE       = (255, 255, 255)		
 RED         = (255,   0,   0)		
