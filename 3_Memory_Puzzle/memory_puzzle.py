@@ -11,8 +11,8 @@ FPS = 30
 WINDOW_WDITH = 800
 WINDOW_HEIGHT = 800
 REVEAL_SPEED = int(1280*0.0135) # Speed boxes' sliding reveals and covers
-BOARD_WIDTH = 8
-BOARD_HEIGHT = 8
+BOARD_WIDTH = 4
+BOARD_HEIGHT = 3
 GAP_SIZE = 10 # Size of gap between boxes
 
 BOX_WIDTH = int((WINDOW_WDITH - (GAP_SIZE*BOARD_WIDTH)) / BOARD_WIDTH) # Size of box height/width
