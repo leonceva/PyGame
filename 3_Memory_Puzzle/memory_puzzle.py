@@ -49,7 +49,7 @@ ALL_SHAPES = (DONUT, SQUARE, DIAMOND, OVAL, LINES)
 assert len(ALL_COLORS)*len(ALL_SHAPES)*2 >= BOARD_HEIGHT * BOARD_WIDTH, 'Board size is too big for the number of shapes/colors'
 
 pygame.mixer.init()
-pygame.mixer.music.load("~/Documents/PyGame/3_Memory_Puzzle/background.mp3")
+pygame.mixer.music.load("background.mp3")
 pygame.mixer.music.set_volume(0.35)
 pygame.mixer.music.play(loops=-1, start=0)
 
@@ -113,7 +113,7 @@ def main():
                     # If icons don't match
                     if icon1shape!=icon2shape or icon1color!=icon2color:
                         bad_guess = pygame.mixer.Channel(0).set_volume(3)
-                        pygame.mixer.Channel(0).play(pygame.mixer.Sound("~/Documents/PyGame/3_Memory_Puzzle/bad_guess.mp3"), loops=0)
+                        pygame.mixer.Channel(0).play(pygame.mixer.Sound("bad_guess.mp3"), loops=0)
                         # Cover up both selections
                         pygame.time.wait(1000)
                         coverBoxesAnimation(mainBoard, [(firstSelection[0], firstSelection[1]), (box_x, box_y)])
@@ -124,7 +124,7 @@ def main():
                         # Check if all the pairs have been found
                         if hasWon(revealedBoxes):
                             pygame.mixer.music.pause()
-                            pygame.mixer.Channel(0).play(pygame.mixer.Sound("~/Documents/PyGame/3_Memory_Puzzle/win.mp3"), loops=2)
+                            pygame.mixer.Channel(0).play(pygame.mixer.Sound("win.mp3"), loops=2)
                             gameWonAnimation(mainBoard)
                             pygame.time.wait(1500)
                             # Reset the board
@@ -140,7 +140,7 @@ def main():
                             startGameAnimation(mainBoard)                            
                         else:
                             pygame.mixer.Channel(0).set_volume(0.3)
-                            pygame.mixer.Channel(0).play(pygame.mixer.Sound("~/Documents/PyGame/3_Memory_Puzzle/good_guess.mp3"), loops=0)
+                            pygame.mixer.Channel(0).play(pygame.mixer.Sound("good_guess.mp3"), loops=0)
                     
                     # Reset the first selection variable
                     firstSelection = None
